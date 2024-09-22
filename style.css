@@ -37,11 +37,8 @@ body{
 }
 .logo-2{
     transform: scale(0);
-    width: 40vw;
+    width: 20vw;
     position: absolute;
-    top: 0vh;
-    left: 0;
-    margin: 8vh 2vw;
     animation: pop 0.2s forwards 7s ;
 
 }
@@ -56,8 +53,66 @@ body{
     transform: scale(0.9) !important;
 }
 .l-2-container{
-    animation: dance 2s infinite 8s;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 1vh;
+    left: 20vw;
+    margin: 8vh 2vw;
+    transform: rotate(15deg);
 }
+
+.left-side{
+    transform: rotate(-15deg);
+
+}
+
+.black-hole{
+    animation: shrink 0.2s ease-in-out ;
+}
+.main-game{
+    background-color: #cce2c2;
+    opacity: 0%;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+}
+.start{
+    display: block;
+    opacity: 100%;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+}
+#logo-in-game{
+    transform: scale(0);
+    margin: 5vh 5vw;
+    width: 164px;
+
+}
+.pop-animation-logo-in-game{
+    animation: pop 0.2s forwards  !important;
+}
+
+@media(max-width:768px){
+    .logo{
+        width: 80vw;
+    }
+    .logo-2{
+        width: 55vw;
+    }
+    .start-btn{
+        width: 60vw;
+    }
+    #logo-in-game{
+        width: 40vw;
+    }
+}
+
 @keyframes pop{
     0%{
         transform: scale(0);
@@ -67,19 +122,6 @@ body{
     }
     100%{
         transform: scale(1);
-    }
-}
-.black-hole{
-    animation: shrink 0.2s ease-in-out ;
-}
-
-
-@media(max-width:768px){
-    .logo{
-        width: 80vw;
-    }
-    .start-btn{
-        width: 60vw;
     }
 }
 
@@ -114,9 +156,9 @@ body{
 }
 @keyframes dance {
     0%{
-        transform: rotate(25deg);
+        transform: rotate(0deg);
     }
     100%{
-        transform: rotate(-25deg);
+        transform: rotate(360deg);
     }
 }
