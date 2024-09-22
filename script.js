@@ -9,5 +9,11 @@ startButton.addEventListener('click',()=>{
     startButton.classList.add('black-hole')
     setTimeout(()=>{
         document.querySelector('.logo-2').classList.add('black-hole')
-    },300)
+        clearInterval(dance)
+    },400)
+
 })
+
+const dance = setInterval(()=>{
+        document.querySelector('.l-2-container').classList.toggle('left-side')
+},400)
