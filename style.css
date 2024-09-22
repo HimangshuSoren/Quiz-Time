@@ -6,15 +6,9 @@
 body{
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
-.intro{
-    width: 100vw;
-    height: 100vh;
-    /* transition: height 1s linear 3.5s; */
-    animation: reduce 2s forwards 3.5s;
-
-
+.overflow-hide{
+    overflow: hidden;
 }
 
 .logo{
@@ -23,24 +17,69 @@ body{
     inset: 0;
     margin: auto;
     opacity: 0%;
-    animation: disappear 3s linear;
+    animation: disappear 4s linear;
 }
 .start-game{
     width: 100vw;
     height: 100vh;
-    background-color: var(--Green);
+    margin-top:100vh ;
+    background-color: #35BD3A;
+    animation: slide-up 1s forwards 4.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.start-btn{
+    width: 30vw;
+    cursor: pointer;
+    transform: scale(0);
+    animation: pop 0.2s forwards 7.5s;
+}
+.logo-2{
+    transform: scale(0);
+    width: 40vw;
+    position: absolute;
+    top: 0vh;
+    left: 0;
+    margin: 8vh 2vw;
+    animation: pop 0.2s forwards 7s ;
 
+}
+.left-right{
+    animation: dance 0.2s infinite ;
+}
 
 .display-none{
     display: none;
 }
+.start-btn:active{
+    transform: scale(0.9) !important;
+}
+@keyframes pop{
+    0%{
+        transform: scale(0);
+    }
+    70%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.black-hole{
+    animation: shrink 0.2s ease-in-out ;
+}
+
 
 @media(max-width:768px){
     .logo{
         width: 80vw;
     }
+    .start-btn{
+        width: 60vw;
+    }
 }
+
 @keyframes disappear{
     0%{
         opacity: 100%
@@ -61,11 +100,20 @@ body{
         margin-top: 0vh;
     }
 }
-@keyframes reduce {
+
+@keyframes shrink {
     0%{
-        height: 100vh;
+        transform: scale(1);
     }
     100%{
-        height: 0vh;
+        transform: scale(0);
+    }
+}
+@keyframes dance {
+    0%{
+        transform: rotate(25deg);
+    }
+    100%{
+        transform: rotate(-25deg);
     }
 }

@@ -1,5 +1,8 @@
 const logo = document.querySelector('.logo')
+const startButton = document.querySelector('.start-btn')
 
 setTimeout(()=>{
-    logo.classList.add('dis-none')
-},10000)
+    document.body.classList.remove('overflow-hide')
+},5500)
+
+startButton.classList.add('scale')
