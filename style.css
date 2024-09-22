@@ -78,19 +78,22 @@ body{
     opacity: 0%;
     transition: opacity 0.5s ease-in-out;
     display: none;
+    padding: 2vw 15vw;
+    box-sizing: border-box;
 }
 .start{
-    display: block;
+    display: flex;
     opacity: 100%;
     width: 100vw;
     height: 100vh;
-    position: fixed;
+    /* position: fixed;
     inset: 0;
-    margin: auto;
-}
+    margin: auto;*/
+} 
 #logo-in-game{
+    align-self: flex-start;
+    justify-content: flex-start;
     transform: scale(0);
-    margin: 5vh 5vw;
     width: 164px;
 
 }
@@ -110,6 +113,9 @@ body{
     }
     #logo-in-game{
         width: 40vw;
+    }
+    .main-game{
+        padding: 2vw 4vw;
     }
 }
 

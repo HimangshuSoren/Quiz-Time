@@ -16,6 +16,7 @@ startButton.addEventListener('click',()=>{
     setTimeout(()=>{
 
         document.querySelector('.main-game').classList.add('start')
+        document.querySelector('.start-game').classList.add('display-none')
     },800)
     setTimeout(()=>{
         document.querySelector('#logo-in-game').classList.add('pop-animation-logo-in-game')
