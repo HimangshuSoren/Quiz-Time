@@ -1,0 +1,71 @@
+
+:root{
+    --Green: #35BD3A;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.intro{
+    width: 100vw;
+    height: 100vh;
+    /* transition: height 1s linear 3.5s; */
+    animation: reduce 2s forwards 3.5s;
+
+
+}
+
+.logo{
+    width: 50vw;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    opacity: 0%;
+    animation: disappear 3s linear;
+}
+.start-game{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--Green);
+}
+
+
+.display-none{
+    display: none;
+}
+
+@media(max-width:768px){
+    .logo{
+        width: 80vw;
+    }
+}
+@keyframes disappear{
+    0%{
+        opacity: 100%
+    }
+    70%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+    }
+}
+
+@keyframes slide-up {
+    0%{
+        margin-top: 100vh;
+    }
+    100%{
+        margin-top: 0vh;
+    }
+}
+@keyframes reduce {
+    0%{
+        height: 100vh;
+    }
+    100%{
+        height: 0vh;
+    }
+}
