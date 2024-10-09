@@ -1,7 +1,9 @@
+import QQ from "./questions.js"
+
 const logo = document.querySelector('.logo')
 const question = document.querySelector('.question')
 const startButton = document.querySelector('.start-btn')
-
+var tim
 document.querySelector('.main-game').classList.add('display-none')
 
 setTimeout(() => {
@@ -29,9 +31,9 @@ startButton.addEventListener('click', () => {
         document.querySelector('.container-1').classList.add('pop-animation-logo-in-game')
     }, 2300)
     document.querySelector('.container-1').classList.add('dis-block')
-    setTimeout(() => {
-        question.innerText = "Who is the Vice President of Turkmenistan?"
-    }, 2800)
+    // setTimeout(() => {
+    //     // question.innerText = "Who is the Vice President of Turkmenistan?"
+    // }, 2800)
 
     setTimeout(() => {
         document.querySelector('.Q-no').classList.add('pop-animation-logo-in-game')
@@ -44,13 +46,13 @@ startButton.addEventListener('click', () => {
     }, 2700)
 
 
-    let inc = 30
-    var tim = setInterval(() => {
+    let inc = 50
+    tim = setInterval(() => {
         if (inc < 10) {
-            document.querySelector(".timer").innerHTML = `0${inc}/30`
+            document.querySelector(".timer").innerHTML = `0${inc}/50`
         }
         else {
-            document.querySelector(".timer").innerHTML = `${inc}/30`
+            document.querySelector(".timer").innerHTML = `${inc}/50`
         }
         inc--
         if (inc == -1) {
@@ -65,3 +67,40 @@ startButton.addEventListener('click', () => {
 const dance = setInterval(() => {
     document.querySelector('.l-2-container').classList.toggle('left-side')
 }, 400)
+
+let RNumber = Math.floor(Math.random()*25+1)
+console.log(RNumber)
+let  option = document.querySelectorAll('.options') 
+let  option1 = document.querySelector('.option-1') 
+let  option2 = document.querySelector('.option-2') 
+let  option3 = document.querySelector('.option-3') 
+let  option4 = document.querySelector('.option-4') 
+
+question.innerHTML = QQ[RNumber].question
+option3.innerHTML = QQ[RNumber].options[2]
+option1.innerHTML = QQ[RNumber].options[0]
+option2.innerHTML = QQ[RNumber].options[1]
+option4.innerHTML = QQ[RNumber].options[3]
+
+option.forEach(element => {
+    element.addEventListener('click',(e)=>{
+
+        if( e.target.innerHTML == QQ[RNumber].correctAnswer){
+         e.target.style= `background-color:var(--Green); color:white; border-color:green;`
+        }
+        else if(e.target.innerHTML != QQ[RNumber].correctAnswer){
+         e.target.style = `background-color:red; color:white ; border-color:rgb(195, 0, 0)`
+        }
+        option.forEach(op=>{
+            if(op.innerHTML == QQ[RNumber].correctAnswer){
+                op.style= `background-color:var(--Green); color:white; border-color:green;`
+            }
+        })
+        clearInterval(tim)
+        
+     })
+    
+})
+
+
+

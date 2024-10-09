@@ -1,21 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-:root{
+:root {
     --Green: #35BD3A;
 }
 
-body{
+body {
     font-family: 'Poppins';
     font-weight: 500;
     margin: 0;
     padding: 0;
 }
-.overflow-hide{
+
+.overflow-hide {
     overflow: hidden;
 }
 
-.logo{
+.logo {
     width: 50vw;
     position: fixed;
     inset: 0;
@@ -23,43 +24,50 @@ body{
     opacity: 0%;
     animation: disappear 4s linear;
 }
-.start-game{
+
+.start-game {
     width: 100vw;
     height: 100vh;
-    margin-top:100vh ;
+    margin-top: 100vh;
     background-color: #35BD3A;
     animation: slide-up 1s forwards 4.5s;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.start-btn{
+
+.start-btn {
     width: 30vw;
     cursor: pointer;
     transform: scale(0);
     animation: pop 0.2s forwards 7.5s;
 }
-.logo-2{
+
+.logo-2 {
     transform: scale(0);
     width: 20vw;
     position: absolute;
-    animation: pop 0.2s forwards 7s ;
+    animation: pop 0.2s forwards 7s;
 
 }
-.left-right{
-    animation: dance 0.2s infinite ;
+
+.left-right {
+    animation: dance 0.2s infinite;
 }
 
-.display-none{
+.display-none {
     display: none !important;
 }
-.dis-block{
+
+.dis-block {
     display: block !important;
 }
-.start-btn:active{
+
+.start-btn:active {
     transform: scale(0.9) !important;
 }
-.l-2-container{
+
+.l-2-container {
     width: 100px;
     height: 100px;
     display: flex;
@@ -72,15 +80,16 @@ body{
     transform: rotate(15deg);
 }
 
-.left-side{
+.left-side {
     transform: rotate(-15deg);
 
 }
 
-.black-hole{
-    animation: shrink 0.2s ease-in-out ;
+.black-hole {
+    animation: shrink 0.2s ease-in-out;
 }
-.main-game{
+
+.main-game {
     background-color: #cce2c2;
     opacity: 0%;
     transition: opacity 0.5s ease-in-out;
@@ -90,7 +99,8 @@ body{
     display: flex;
     flex-direction: column;
 }
-.start{
+
+.start {
     display: flex;
     opacity: 100%;
     width: 100vw;
@@ -98,8 +108,9 @@ body{
     /* position: fixed;
     inset: 0;
     margin: auto;*/
-} 
-#logo-in-game{
+}
+
+#logo-in-game {
     align-self: flex-start;
     justify-content: flex-start;
     transform: scale(0);
@@ -107,7 +118,7 @@ body{
 
 }
 
-.Q-no{
+.Q-no {
     font-weight: 700;
     margin-top: 2vh;
     border-radius: 5px;
@@ -121,7 +132,8 @@ body{
     align-self: flex-end;
     transform: scale(0);
 }
-.timer{
+
+.timer {
     font-weight: 700;
     border-radius: 5px;
     width: 5vw;
@@ -134,7 +146,8 @@ body{
     /* align-self: flex-end; */
 
 }
-.timer-container{
+
+.timer-container {
     transform: scale(0);
     margin-top: 2vh;
     align-items: center;
@@ -143,88 +156,104 @@ body{
     width: 5vw;
     height: 6vh;
     background-color: #35bd39a0;
+    /* background-color: rgb(195, 0, 0); */
     align-self: flex-end;
     border-radius: 5px;
 
 }
 
-.question{
+.question {
     padding-left: 5%;
 }
 
 
-.pop-animation-logo-in-game{
-    animation: pop 0.2s forwards  !important;
+.pop-animation-logo-in-game {
+    animation: pop 0.2s forwards !important;
 }
 
-@media(max-width:768px){
-    .logo{
+@media(max-width:768px) {
+    .logo {
         width: 80vw;
     }
-    .logo-2{
+
+    .logo-2 {
         width: 55vw;
     }
-    .start-btn{
+
+    .start-btn {
         width: 60vw;
     }
-    #logo-in-game{
+
+    #logo-in-game {
         width: 40vw;
         /* display: block; */
     }
-    .main-game{
+
+    .main-game {
         padding: 2vw 4vw;
     }
-    .Q-no, .timer, .timer-container{
+
+    .Q-no,
+    .timer,
+    .timer-container {
         width: 15vw;
     }
 }
 
-@keyframes pop{
-    0%{
+@keyframes pop {
+    0% {
         transform: scale(0);
     }
-    70%{
+
+    70% {
         transform: scale(1.2);
     }
-    100%{
+
+    100% {
         transform: scale(1);
     }
 }
 
-@keyframes disappear{
-    0%{
+@keyframes disappear {
+    0% {
         opacity: 100%
     }
-    70%{
+
+    70% {
         opacity: 100%;
     }
-    100%{
+
+    100% {
         opacity: 0%;
     }
 }
 
 @keyframes slide-up {
-    0%{
+    0% {
         margin-top: 100vh;
     }
-    100%{
+
+    100% {
         margin-top: 0vh;
     }
 }
 
 @keyframes shrink {
-    0%{
+    0% {
         transform: scale(1);
     }
-    100%{
+
+    100% {
         transform: scale(0);
     }
 }
+
 @keyframes dance {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+
+    100% {
         transform: rotate(360deg);
     }
 }
@@ -232,13 +261,13 @@ body{
 
 
 
-/* ------------------------------------------ */ 
+/* ------------------------------------------ */
 
 
 
 .container-1 {
     /* background-color: aliceblue; */
-    margin-top: 2vh ;
+    margin-top: 2vh;
     display: flex;
     position: relative;
     align-items: center;
@@ -284,7 +313,7 @@ body{
 
 .container-2 {
     /* background-color: aliceblue; */
-    margin-top: 2vh ;
+    margin-top: 2vh;
     display: flex;
     position: relative;
     align-items: center;
@@ -315,7 +344,8 @@ body{
     align-items: center;
     justify-content: center;
 }
-.options{
+
+.options {
     padding-left: 5%;
     cursor: pointer;
     border: 2px solid rgba(128, 128, 128, 0.589);
