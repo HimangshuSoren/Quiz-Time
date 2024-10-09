@@ -198,6 +198,9 @@ body {
     .timer-container {
         width: 15vw;
     }
+    .layers{
+        height: 97% !important;
+    }
 }
 
 @keyframes pop {
