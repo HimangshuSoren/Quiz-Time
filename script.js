@@ -70,7 +70,7 @@ const dance = setInterval(() => {
 
 let RNumber = Math.floor(Math.random()*25+1)
 console.log(RNumber)
-let  option = document.querySelectorAll('.options') 
+let  option = document.querySelectorAll('.options')   
 let  option1 = document.querySelector('.option-1') 
 let  option2 = document.querySelector('.option-2') 
 let  option3 = document.querySelector('.option-3') 
@@ -82,21 +82,25 @@ option1.innerHTML = QQ[RNumber].options[0]
 option2.innerHTML = QQ[RNumber].options[1]
 option4.innerHTML = QQ[RNumber].options[3]
 
+let ans = 0
 option.forEach(element => {
     element.addEventListener('click',(e)=>{
-
-        if( e.target.innerHTML == QQ[RNumber].correctAnswer){
-         e.target.style= `background-color:var(--Green); color:white; border-color:green;`
-        }
-        else if(e.target.innerHTML != QQ[RNumber].correctAnswer){
-         e.target.style = `background-color:red; color:white ; border-color:rgb(195, 0, 0)`
-        }
-        option.forEach(op=>{
-            if(op.innerHTML == QQ[RNumber].correctAnswer){
-                op.style= `background-color:var(--Green); color:white; border-color:green;`
+        if(ans<1){
+            if( e.target.innerHTML == QQ[RNumber].correctAnswer){
+             e.target.style= `background-color:var(--Green); color:white; border-color:green;`
             }
-        })
-        clearInterval(tim)
+            else if(e.target.innerHTML != QQ[RNumber].correctAnswer){
+             e.target.style = `background-color:red; color:white ; border-color:rgb(195, 0, 0)`
+            }
+            option.forEach(op=>{
+                if(op.innerHTML == QQ[RNumber].correctAnswer){
+                    op.style= `background-color:var(--Green); color:white; border-color:green;`
+                }
+            })
+            clearInterval(tim)
+            ans++
+        }
+
         
      })
     
